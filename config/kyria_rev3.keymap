@@ -239,7 +239,7 @@
         &trans     &trans     &trans     &trans     &trans     &trans                                                &kp INS    &kp K_UNDO  &trans      &trans     &trans      &trans
         &trans     _LGUI      _LALT      _LSFT      _LCTL      &trans                                                &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT  &trans      &trans
         &trans     &trans     &to _LMS   &trans     &trans     &trans     &trans     &trans          &trans &trans  &kp HOME   &kp PG_DN   &kp PG_UP   &kp END    &trans      &trans
-                                         &trans     &trans     &trans     &trans     &trans          &trans &kp BSPC &trans     &trans
+                                         &trans     &trans     &trans     &trans     &trans          &trans &kp BSPC &trans     &trans     &trans
       >;
     };
 
@@ -255,7 +255,7 @@
         &trans     AS(LBKT)   AS(N7)     AS(N8)     AS(N9)     AS(RBKT)                                            &trans     &trans     &trans     &trans     &trans   &trans
         &trans     AS(SEMI)   AS(N4)     AS(N5)     AS(N6)     AS(EQUAL)                                           &kp LEFT   CTL_DN     SFT_UP     ALT_R      &trans   &trans
         &trans     AS(GRAVE)  AS(N1)     AS(N2)     AS(N3)     AS(BSLH)   &trans     &trans          &trans &trans &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans   &trans
-                                         &trans     &kp DOT    AS(N0)     AS(MINUS)  &trans          &trans &trans &trans     &trans
+                                         &trans     &kp DOT    AS(N0)     AS(MINUS)  &trans          &trans &trans &trans     &trans     &trans
       >;
     };
 
@@ -268,7 +268,7 @@
         &trans     &kp LBRC   &kp AMPS   &kp STAR   &kp LPAR   &kp RBRC                                             &trans    &trans     &trans     &trans     &trans   &trans
         &trans     &kp COLON  &kp DLLR   &kp PRCNT  &kp CARET  &kp PLUS                                             &trans    &trans     &trans     &trans     &trans   &trans
         &trans     &kp TILDE  &kp EXCL   &kp AT     &kp HASH   &kp PIPE   &trans     &trans          &trans &trans  &trans    &trans     &trans     &trans     &trans   &trans
-                                         &trans     &kp LPAR   &kp RPAR   &kp UNDER  &trans          &trans &trans  &trans    &trans
+                                         &trans     &kp LPAR   &kp RPAR   &kp UNDER  &trans          &trans &trans  &trans    &trans     &trans
       >;
     };
 
@@ -281,7 +281,7 @@
         &trans     &kp F12    &kp F7     &kp F8     &kp F9     &kp PSCRN                                            &trans     &trans     &trans     &trans     &trans   &trans
         &trans     &kp F11    &kp F4     &kp F5     &kp F6     &kp SLCK                                             &trans     &trans     &trans     &trans     &trans   &trans
         &trans     &kp F10    &kp F1     &kp F2     &kp F3     _PAUSE     &trans     &trans          &trans &trans  &trans     &trans     &trans     &trans     &trans   &trans
-                                         &trans     &kp F15    &kp F14    &kp F13    &trans          &trans &trans  &trans     &trans
+                                         &trans     &kp F15    &kp F14    &kp F13    &trans          &trans &trans  &trans     &trans     &trans
       >;
     };
 
@@ -294,7 +294,7 @@
         &trans     &trans     &trans     &trans     &trans     &trans                                               &trans     &trans     &trans     &trans     &trans   &trans
         &trans     &trans     &trans     &trans     &trans     &trans                                               _MSL       _MSD       _MSU       _MSR       &trans   &trans
         &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans          &trans &trans  _MWL       _MWD       _MWU       _MWR       &trans   &trans
-                                         &trans     &trans     &trans     &trans     &trans          _MBR   _MBL    _MBM       &trans
+                                         &trans     &trans     &trans     &trans     &trans          _MBR   _MBL    _MBM       &trans     &trans
       >;
     };
 
@@ -309,7 +309,7 @@
         &trans     RGBEFF     RGBHUD     RGBSAD     RGBBRD     &trans                                               &trans     &trans     &trans     &trans     &trans   &trans
         &trans     _BT_CLR    _BT_CLRA   &trans     &trans     &trans                                               &trans     _VOL_DN    _VOL_UP    &trans     &trans   &trans
         &trans     BT0        BT1        BT2        BT3        BT4        &trans     &trans          &trans &trans  &trans     &trans     &trans     &trans     &trans   &trans
-                                         &trans     &trans     &trans     &trans     &trans          _M_STOP _M_PP  _M_MUTE    &trans
+                                         &trans     &trans     &trans     &trans     &trans          _M_STOP _M_PP  _M_MUTE    &trans     &trans
       >;
     };
 
@@ -319,7 +319,7 @@
         &to 0      &to 0      &to 0      &to 0      &to 0      &to 0                                                &to 0      &to 0      &to 0      &to 0      &to 0    &to 0
         &to 0      &to 0      _MSL       _MSU       _MSD       _MSR                                                 &to 0      &to 0      &to 0      &to 0      &to 0    &to 0
         &to 0      &to 0      &to 0      _MWU       _MWD       &to 0      &to 0      &to 0           &to 0  &to 0  &to 0      &to 0      &to 0      &to 0      &to 0    &to 0
-                                         &to 0      &to 0      _MBL       &to 0      &to 0           &to 0  &to 0  &to 0      &to 0
+                                         &to 0      &to 0      _MBL       &to 0      &to 0           &to 0  &to 0  &to 0      &to 0      &to 0
       >;
     };
 
@@ -332,7 +332,7 @@
         &trans     &trans     &trans     &kp LBKT   &kp RBKT   &trans                                               &trans     &trans     &trans     &trans     &trans   &trans
         &trans     &trans     &trans     &kp LPAR   &kp RPAR   &trans                                               &trans     &trans     &trans     &trans     &trans   &trans
         &trans     &trans     &trans     &kp LBRC   &kp RBRC   &trans     &trans     &trans          &trans &trans  &trans     &trans     &trans     &trans     &trans   &trans
-                                         &trans     &trans     &trans     &trans     &trans          &trans &trans  &trans     &trans
+                                         &trans     &trans     &trans     &trans     &trans          &trans &trans  &trans     &trans     &trans
       >;
     };
 
@@ -345,7 +345,7 @@
         &trans     &trans     &trans     &trans     &trans     &trans                                               &trans     &kp LBKT   &kp RBKT   &trans     &trans   &trans
         &trans     &trans     &trans     &trans     &trans     &trans                                               &trans     &kp LPAR   &kp RPAR   &trans     &trans   &trans
         &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans          &trans &trans  &trans     &kp LBRC   &kp RBRC   &trans     &trans   &trans
-                                         &trans     &trans     &trans     &trans     &trans          &trans &trans  &trans     &trans
+                                         &trans     &trans     &trans     &trans     &trans          &trans &trans  &trans     &trans     &trans
       >;
     };
 
@@ -358,7 +358,7 @@
         &trans     BOOT       &trans     &trans     &trans     &trans                                               &trans     &trans     &trans     &trans     BOOT     &trans
         &trans     &trans     &trans     &trans     &trans     &trans                                               &trans     &trans     &trans     &trans     &trans   &trans
         &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans          &trans &trans  &trans     &trans     &trans     &trans     &trans   &trans
-                                         &trans     &trans     &trans     &trans     &trans          &trans &trans  &trans     &trans
+                                         &trans     &trans     &trans     &trans     &trans          &trans &trans  &trans     &trans     &trans
       >;
     };
   };
