@@ -5,44 +5,361 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/mouse.h>
+
+// Short versions
+#define RGBON   &rgb_ug RGB_ON
+#define RGBOFF  &rgb_ug RGB_OFF
+#define RGBTOG  &rgb_ug RGB_TOG
+#define RGBHUI  &rgb_ug RGB_HUI
+#define RGBHUD  &rgb_ug RGB_HUD
+#define RGBSAI  &rgb_ug RGB_SAI
+#define RGBSAD  &rgb_ug RGB_SAD
+#define RGBBRI  &rgb_ug RGB_BRI
+#define RGBBRD  &rgb_ug RGB_BRD
+#define RGBEFF  &rgb_ug RGB_EFF
+
+// Short bluetooth.
+#define BT0         &bt BT_SEL 0
+#define BT1         &bt BT_SEL 1
+#define BT2         &bt BT_SEL 2
+#define BT3         &bt BT_SEL 3
+#define BT4         &bt BT_SEL 4
+#define _BT_CLR     &bt BT_CLR
+#define _BT_CLRA    &bt BT_CLR_ALL
 
 #define BOOT        &bootloader
 
+// Define LEFT and RIGHT keys for Kyria
+#define LEFT_KEYS                               \
+  0  1  2  3  4  5                              \
+  12 13 14 15 16 17                             \
+  24 25 26 27 28 29 30 31
+#define RIGHT_KEYS                              \
+  6  7  8  9  10 11                             \
+  18 19 20 21 22 23                             \
+  32 33 34 35 36 37 38 39
+#define THUMB_KEYS                              \
+  40 41 42 43 44                                \
+  45 46 47 48 49
+
+// Home row mods - Left
+#define _A &hmr_left LGUI A
+#define _S &hmr_left LALT S
+#define _D &hmr_left LSFT D
+#define _F &hmr_left LCTL F
+#define _G &hmr_left LGUI G
+
+// Home row mods - Right
+#define _H    &hmr_right LGUI H
+#define _J    &hmr_right LCTL J
+#define _K    &hmr_right LSFT K
+#define _L    &hmr_right LALT L
+#define _SEMI &hmr_right LGUI SEMI
+#define _QUOT &hmr_right LGUI QUOT
+
+#define CTL_SEMI &hmr_right LCTL SEMI
+#define LCTL_TAB &hmr_left LCTL TAB
+#define LCTL_ESC &hmr_left LCTL ESC
+#define CTL_QUOT &hmr_right LCTL QUOT
+
+// Layers
+#define _BASE 0
+#define _NAV  1
+#define _NUM  2
+#define _SYM  3
+#define _FUN  4
+#define _MOS  5
+#define _MED 6
+#define _LMS 7
+#define _LBRC 8
+#define _RBRC 9
+#define _BOOT 10
+
+// Left thumbs
+#define MOS_TAB  &lt _MOS TAB
+#define MED_ESC  &lt _MED ESC
+#define NAV_SPC  &lt _NAV SPC
+#define NAV_BSPC &lt _NAV BSPC
+
+// Right thumbs
+#define SYM_ENT  &lt _SYM ENTER
+#define FUN_DEL  &lt _FUN DEL
+#define NUM_BS   &lt _NUM BSPC
+#define NUM_SPC  &lt _NUM SPC
+
+// Layer hold keys
+#define BRC_I  &lt _LBRC I
+#define BRC_E  &lt _RBRC E
+
+// Just some short versions
+#define _PAUSE &kp PAUSE_BREAK
+
+// Mouse movement.
+#define _MSU &mmv MOVE_UP
+#define _MSD &mmv MOVE_DOWN
+#define _MSL &mmv MOVE_LEFT
+#define _MSR &mmv MOVE_RIGHT
+
+// Mouse wheel movement.
+#define _MWU &msc SCRL_UP
+#define _MWD &msc SCRL_DOWN
+#define _MWL &msc SCRL_LEFT
+#define _MWR &msc SCRL_RIGHT
+
+// Mouse buttons
+#define _MBL &mkp MB1
+#define _MBR &mkp MB2
+#define _MBM &mkp MB3
+
+// Other
+#define SFT_TAB &mt LSFT TAB
+#define MOS_C   &lt _MOS C
+#define SFT_ESC &mt LSFT ESC
+
+// Media keys
+#define _VOL_UP &kp  C_VOL_UP
+#define _VOL_DN &kp  C_VOL_DN
+#define _M_NEXT &kp  C_NEXT
+#define _M_PREV &kp  C_PREV
+#define _M_MUTE &kp  K_MUTE
+#define _M_PP   &kp  K_PP
+#define _M_STOP &kp  K_STOP
+
+#define _LGUI &kp LGUI
+#define _LALT &kp LALT
+#define _LSFT &kp LSFT
+#define _LCTL &kp LCTL
+
+&caps_word {
+  /* This takes care of cancelling caps word on control, gui... */
+  /delete-property/ ignore-modifiers;
+};
+
 / {
-    keymap {
-        compatible = "zmk,keymap";
-
-        default_layer {
-            // ---------------------------------------------------------------------------------------------------------------------------------
-            // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   |   \  |
-            // |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
-            // | SHIFT |  Z  |  X  |  C   |  V   |  B   | L SHIFT | L SHIFT |  | LAYER 1 | L SHIFT |  N   |  M    |  ,    |  .   |   /   | CTRL |
-            //                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
-            bindings = <
-            &kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                  &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
-            &kp TAB   &kp A &kp S &kp D &kp F &kp G                                                  &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-            &kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LSHFT BOOT            BOOT   &kp LSHFT &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-                                  &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC       &kp RET &kp SPACE &kp TAB &kp BSPC &kp RALT
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-        };
-        function_layer {
-            // ---------------------------------------------------------------------------------------------------------------------------------
-            // |       |      |BT_CLR|BTSEL0|BTSEL1|BTSEL2|                                         |      |      |      |      |      |      |
-            // |       |      |      |BTSEL3|BTSEL4|      |                                         |      |      |      |      |      |      |
-            // |       |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-            //                       |      |      |      |      |      |      |      |      |      |      |      |      |
-            bindings = <
-            &trans &trans &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2              &trans &trans &trans &trans &trans &trans
-            &trans &trans &trans     &bt BT_SEL 3 &bt BT_SEL 4 &trans                    &trans &trans &trans &trans &trans &trans
-            &trans &trans &trans &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans &trans &trans &trans
-                                 &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-        };
+  
+  behaviors {
+    
+    // flavor:
+    //   - balanced:
+    //       trigger hold after this time or another key is presed and
+    //       released
+    #define HMR_TAPPING_TERM_MS 200
+    
+    hmr_left: home_row_mods_left {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HMR_LEFT";
+      flavor = "balanced";
+      #binding-cells = <2>;
+      tapping-term-ms = <HMR_TAPPING_TERM_MS>;
+      quick-tap-ms = <175>;
+      bindings = <&kp>, <&kp>;
+      global-quick-tap;
+      hold-trigger-key-positions = <RIGHT_KEYS THUMB_KEYS>;
+      hold-trigger-on-release;
     };
+
+    hmr_right: home_row_mods_right {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HMR_RIGHT";
+      flavor = "balanced";
+      #binding-cells = <2>;
+      tapping-term-ms = <HMR_TAPPING_TERM_MS>;
+      quick-tap-ms = <175>;
+      bindings = <&kp>, <&kp>;
+      global-quick-tap;
+      hold-trigger-key-positions = <LEFT_KEYS THUMB_KEYS>;
+      hold-trigger-on-release;
+    };
+
+    // Autoshift.
+    as: auto_shift {
+      compatible = "zmk,behavior-hold-tap";
+      label = "AUTO_SHIFT";
+      #binding-cells = <2>;
+      tapping_term_ms = <135>;
+      quick_tap_ms = <0>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+    };
+    #define AS(keycode) &as LS(keycode) keycode
+
+    // Tap dance on right "extra" key.
+    td_pp: tap_dance_mod_tap {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TD_PP";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&caps_word>, <&kp C_PP>;
+    };
+  };
+
+  combos {
+    compatible = "zmk,combos";
+    combo_cw {
+      timeout-ms = <50>;
+      key-positions = <27 32>;
+      bindings = <&caps_word>;
+    };
+
+    combo_esc {
+      timeout-ms = <50>;
+      key-positions = <13 14>;  // QW for Kyria
+      bindings = <&kp ESC>;
+    };
+  };
+
+  keymap {
+    compatible = "zmk,keymap";
+
+    // Miryoku QWERTY like default layer.
+    default_layer {
+      #define BT_PGDN &lt _BOOT PG_DN
+      #define BT_PGUP &lt _BOOT PG_UP
+      display-name = " Default";
+      bindings = <
+        &kp ESC   &kp Q      &kp W      BRC_E      &kp R      &kp T                                                  &kp Y      &kp U      BRC_I      &kp O      &kp P      &kp BSPC
+        LCTL_TAB  _A         _S         _D         _F         _G                                                      _H         _J         _K         _L         _QUOT      CTL_SEMI
+        &kp LSHFT &kp Z      &kp X      MOS_C      &kp V      &kp B      &kp ESC     BOOT              BOOT  _M_MUTE &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp RSHFT
+                                        &trans     &trans     MED_ESC    NAV_SPC    SFT_TAB            SYM_ENT NUM_BS  FUN_DEL   BT_PGDN BT_PGUP
+      >;
+      
+      sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
+    };
+
+    // Layer 1
+    // Nav Layer
+    nav_layer {
+      display-name = "    Nav";
+      bindings = <
+        &trans     &trans     &trans     &trans     &trans     &trans                                                &kp INS    &kp K_UNDO  &trans      &trans     &trans      &trans
+        &trans     _LGUI      _LALT      _LSFT      _LCTL      &trans                                                &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT  &trans      &trans
+        &trans     &trans     &to _LMS   &trans     &trans     &trans     &trans     &trans          &trans &trans  &kp HOME   &kp PG_DN   &kp PG_UP   &kp END    &trans      &trans
+                                         &trans     &trans     &trans     &trans     &trans          &trans &kp BSPC &trans     &trans
+      >;
+    };
+
+    // Layer 2
+    // - Num layer
+    // - Miryoku
+    #define CTL_DN &hmr_right LCTL DOWN
+    #define SFT_UP &hmr_right LSFT UP
+    #define ALT_R  &hmr_right LALT RIGHT
+    num_layer {
+      display-name = "    Num";
+      bindings = <
+        &trans     AS(LBKT)   AS(N7)     AS(N8)     AS(N9)     AS(RBKT)                                            &trans     &trans     &trans     &trans     &trans   &trans
+        &trans     AS(SEMI)   AS(N4)     AS(N5)     AS(N6)     AS(EQUAL)                                           &kp LEFT   CTL_DN     SFT_UP     ALT_R      &trans   &trans
+        &trans     AS(GRAVE)  AS(N1)     AS(N2)     AS(N3)     AS(BSLH)   &trans     &trans          &trans &trans &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans   &trans
+                                         &trans     &kp DOT    AS(N0)     AS(MINUS)  &trans          &trans &trans &trans     &trans
+      >;
+    };
+
+    // Layer 3
+    // - Sym layer
+    // - Miryoku
+    sym_layer {
+      display-name = "    Sym";
+      bindings = <
+        &trans     &kp LBRC   &kp AMPS   &kp STAR   &kp LPAR   &kp RBRC                                             &trans    &trans     &trans     &trans     &trans   &trans
+        &trans     &kp COLON  &kp DLLR   &kp PRCNT  &kp CARET  &kp PLUS                                             &trans    &trans     &trans     &trans     &trans   &trans
+        &trans     &kp TILDE  &kp EXCL   &kp AT     &kp HASH   &kp PIPE   &trans     &trans          &trans &trans  &trans    &trans     &trans     &trans     &trans   &trans
+                                         &trans     &kp LPAR   &kp RPAR   &kp UNDER  &trans          &trans &trans  &trans    &trans
+      >;
+    };
+
+    // Layer 4
+    // - Function layer
+    // - Miryoku
+    function_layer {
+      display-name = " Func";
+      bindings = <
+        &trans     &kp F12    &kp F7     &kp F8     &kp F9     &kp PSCRN                                            &trans     &trans     &trans     &trans     &trans   &trans
+        &trans     &kp F11    &kp F4     &kp F5     &kp F6     &kp SLCK                                             &trans     &trans     &trans     &trans     &trans   &trans
+        &trans     &kp F10    &kp F1     &kp F2     &kp F3     _PAUSE     &trans     &trans          &trans &trans  &trans     &trans     &trans     &trans     &trans   &trans
+                                         &trans     &kp F15    &kp F14    &kp F13    &trans          &trans &trans  &trans     &trans
+      >;
+    };
+
+    // Layer 5
+    // - Mouse layer
+    // - Miryoku like, but vi shifted style navigation
+    mouse_layer {
+      display-name = " Mouse";
+      bindings = <
+        &trans     &trans     &trans     &trans     &trans     &trans                                               &trans     &trans     &trans     &trans     &trans   &trans
+        &trans     &trans     &trans     &trans     &trans     &trans                                               _MSL       _MSD       _MSU       _MSR       &trans   &trans
+        &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans          &trans &trans  _MWL       _MWD       _MWU       _MWR       &trans   &trans
+                                         &trans     &trans     &trans     &trans     &trans          _MBR   _MBL    _MBM       &trans
+      >;
+    };
+
+    // Layer 6
+    // - Media layer
+    // - Miryoku, no power toggle or rgb though.
+    // - Bluetooth profiles on the left side as that makes more sense
+    //   to me with the left being the master.
+    media_layer {
+      display-name = " Media";
+      bindings = <
+        &trans     RGBEFF     RGBHUD     RGBSAD     RGBBRD     &trans                                               &trans     &trans     &trans     &trans     &trans   &trans
+        &trans     _BT_CLR    _BT_CLRA   &trans     &trans     &trans                                               &trans     _VOL_DN    _VOL_UP    &trans     &trans   &trans
+        &trans     BT0        BT1        BT2        BT3        BT4        &trans     &trans          &trans &trans  &trans     &trans     &trans     &trans     &trans   &trans
+                                         &trans     &trans     &trans     &trans     &trans          _M_STOP _M_PP  _M_MUTE    &trans
+      >;
+    };
+
+    lmouse {
+      display-name = " Lmouse";
+      bindings = <
+        &to 0      &to 0      &to 0      &to 0      &to 0      &to 0                                                &to 0      &to 0      &to 0      &to 0      &to 0    &to 0
+        &to 0      &to 0      _MSL       _MSU       _MSD       _MSR                                                 &to 0      &to 0      &to 0      &to 0      &to 0    &to 0
+        &to 0      &to 0      &to 0      _MWU       _MWD       &to 0      &to 0      &to 0           &to 0  &to 0  &to 0      &to 0      &to 0      &to 0      &to 0    &to 0
+                                         &to 0      &to 0      _MBL       &to 0      &to 0           &to 0  &to 0  &to 0      &to 0
+      >;
+    };
+
+    // Layer 8
+    // - Braces layer (left side)
+    // - Focused on all types of braces and brackets
+    braces_layer {
+      display-name = " Braces";
+      bindings = <
+        &trans     &trans     &trans     &kp LBKT   &kp RBKT   &trans                                               &trans     &trans     &trans     &trans     &trans   &trans
+        &trans     &trans     &trans     &kp LPAR   &kp RPAR   &trans                                               &trans     &trans     &trans     &trans     &trans   &trans
+        &trans     &trans     &trans     &kp LBRC   &kp RBRC   &trans     &trans     &trans          &trans &trans  &trans     &trans     &trans     &trans     &trans   &trans
+                                         &trans     &trans     &trans     &trans     &trans          &trans &trans  &trans     &trans
+      >;
+    };
+
+    // Layer 9
+    // - Right-side braces layer
+    // - Mirrored version of the braces layer
+    braces_right_layer {
+      display-name = "BracesR";
+      bindings = <
+        &trans     &trans     &trans     &trans     &trans     &trans                                               &trans     &kp LBKT   &kp RBKT   &trans     &trans   &trans
+        &trans     &trans     &trans     &trans     &trans     &trans                                               &trans     &kp LPAR   &kp RPAR   &trans     &trans   &trans
+        &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans          &trans &trans  &trans     &kp LBRC   &kp RBRC   &trans     &trans   &trans
+                                         &trans     &trans     &trans     &trans     &trans          &trans &trans  &trans     &trans
+      >;
+    };
+
+    // Layer 10
+    // - Boot layer
+    // - System controls and bootloader access
+    boot_layer {
+      display-name = " Boot";
+      bindings = <
+        &trans     BOOT       &trans     &trans     &trans     &trans                                               &trans     &trans     &trans     &trans     BOOT     &trans
+        &trans     &trans     &trans     &trans     &trans     &trans                                               &trans     &trans     &trans     &trans     &trans   &trans
+        &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans          &trans &trans  &trans     &trans     &trans     &trans     &trans   &trans
+                                         &trans     &trans     &trans     &trans     &trans          &trans &trans  &trans     &trans
+      >;
+    };
+  };
 };
