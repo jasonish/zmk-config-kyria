@@ -13,16 +13,16 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 // Short versions
-#define RGBON   &rgb_ug RGB_ON
-#define RGBOFF  &rgb_ug RGB_OFF
-#define RGBTOG  &rgb_ug RGB_TOG
-#define RGBHUI  &rgb_ug RGB_HUI
-#define RGBHUD  &rgb_ug RGB_HUD
-#define RGBSAI  &rgb_ug RGB_SAI
-#define RGBSAD  &rgb_ug RGB_SAD
-#define RGBBRI  &rgb_ug RGB_BRI
-#define RGBBRD  &rgb_ug RGB_BRD
-#define RGBEFF  &rgb_ug RGB_EFF
+#define RGBON      &rgb_ug RGB_ON
+#define RGBOFF     &rgb_ug RGB_OFF
+#define RGBTOG     &rgb_ug RGB_TOG
+#define RGBHUI     &rgb_ug RGB_HUI
+#define RGBHUD     &rgb_ug RGB_HUD
+#define RGBSAI     &rgb_ug RGB_SAI
+#define RGBSAD     &rgb_ug RGB_SAD
+#define RGBBRI     &rgb_ug RGB_BRI
+#define RGBBRD     &rgb_ug RGB_BRD
+#define RGBEFF     &rgb_ug RGB_EFF
 
 // Short bluetooth.
 #define BT0         &bt BT_SEL 0
@@ -49,37 +49,37 @@
   45 46 47 48 49
 
 // Home row mods - Left
-#define _A &hmr_left LGUI A
-#define _S &hmr_left LALT S
-#define _D &hmr_left LSFT D
-#define _F &hmr_left LCTL F
-#define _G &hmr_left LGUI G
+#define _A         &hmr_left LGUI A
+#define _S         &hmr_left LALT S
+#define _D         &hmr_left LSFT D
+#define _F         &hmr_left LCTL F
+#define _G         &hmr_left LGUI G
 
 // Home row mods - Right
-#define _H    &hmr_right LGUI H
-#define _J    &hmr_right LCTL J
-#define _K    &hmr_right LSFT K
-#define _L    &hmr_right LALT L
-#define _SEMI &hmr_right LGUI SEMI
-#define _QUOT &hmr_right LGUI QUOT
+#define _H         &hmr_right LGUI H
+#define _J         &hmr_right LCTL J
+#define _K         &hmr_right LSFT K
+#define _L         &hmr_right LALT L
+#define _SEMI      &hmr_right LGUI SEMI
+#define _QUOT      &hmr_right LGUI QUOT
 
-#define CTL_SEMI &hmr_right LCTL SEMI
-#define LCTL_TAB &hmr_left LCTL TAB
-#define LCTL_ESC &hmr_left LCTL ESC
-#define CTL_QUOT &hmr_right LCTL QUOT
+#define CTL_SEMI   &hmr_right LCTL SEMI
+#define LCTL_TAB   &hmr_left LCTL TAB
+#define LCTL_ESC   &hmr_left LCTL ESC
+#define CTL_QUOT   &hmr_right LCTL QUOT
 
 // Layers
-#define _BASE 0
-#define _NAV  1
-#define _NUM  2
-#define _SYM  3
-#define _FUN  4
-#define _MOS  5
-#define _MED 6
-#define _LMS 7
-#define _LBRC 8
-#define _RBRC 9
-#define _BOOT 10
+#define _BASE      0
+#define _NAV       1
+#define _NUM       2
+#define _SYM       3
+#define _FUN       4
+#define _MOS       5
+#define _MED       6
+#define _LMS       7
+#define _LBRC      8
+#define _RBRC      9
+#define _BOOT      10
 
 // Left thumbs
 #define MOS_TAB  &lt _MOS TAB
@@ -94,48 +94,48 @@
 #define NUM_SPC  &lt _NUM SPC
 
 // Layer hold keys
-#define BRC_I  &lt _LBRC I
-#define BRC_E  &lt _RBRC E
+#define BRC_I      &lt _LBRC I
+#define BRC_E      &lt _RBRC E
 
 // Just some short versions
-#define _PAUSE &kp PAUSE_BREAK
+#define _PAUSE     &kp PAUSE_BREAK
 
 // Mouse movement.
-#define _MSU &mmv MOVE_UP
-#define _MSD &mmv MOVE_DOWN
-#define _MSL &mmv MOVE_LEFT
-#define _MSR &mmv MOVE_RIGHT
+#define _MSU       &mmv MOVE_UP
+#define _MSD       &mmv MOVE_DOWN
+#define _MSL       &mmv MOVE_LEFT
+#define _MSR       &mmv MOVE_RIGHT
 
 // Mouse wheel movement.
-#define _MWU &msc SCRL_UP
-#define _MWD &msc SCRL_DOWN
-#define _MWL &msc SCRL_LEFT
-#define _MWR &msc SCRL_RIGHT
+#define _MWU       &msc SCRL_UP
+#define _MWD       &msc SCRL_DOWN
+#define _MWL       &msc SCRL_LEFT
+#define _MWR       &msc SCRL_RIGHT
 
 // Mouse buttons
-#define _MBL &mkp MB1
-#define _MBR &mkp MB2
-#define _MBM &mkp MB3
+#define _MBL       &mkp MB1
+#define _MBR       &mkp MB2
+#define _MBM       &mkp MB3
 
 // Other
-#define SFT_TAB &mt LSFT TAB
-#define MOS_C   &lt _MOS C
-#define SFT_ESC &mt LSFT ESC
+#define SFT_TAB    &mt LSFT TAB
+#define MOS_C      &lt _MOS C
+#define SFT_ESC    &mt LSFT ESC
 
 // Media keys
-#define _VOL_UP &kp  C_VOL_UP
-#define _VOL_DN &kp  C_VOL_DN
-#define _M_NEXT &kp  C_NEXT
-#define _M_PREV &kp  C_PREV
-#define _M_MUTE &kp  K_MUTE
-#define _M_PP   &kp  K_PP
-#define _M_STOP &kp  K_STOP
+#define _VOL_UP    &kp C_VOL_UP
+#define _VOL_DN    &kp C_VOL_DN
+#define _M_NEXT    &kp C_NEXT
+#define _M_PREV    &kp C_PREV
+#define _M_MUTE    &kp K_MUTE
+#define _M_PP      &kp K_PP
+#define _M_STOP    &kp K_STOP
 
-
-#define _LGUI &kp LGUI
-#define _LALT &kp LALT
-#define _LSFT &kp LSFT
-#define _LCTL &kp LCTL
+// Modifier keys
+#define _LGUI      &kp LGUI
+#define _LALT      &kp LALT
+#define _LSFT      &kp LSFT
+#define _LCTL      &kp LCTL
 
 &caps_word {
   /* This takes care of cancelling caps word on control, gui... */
@@ -226,14 +226,14 @@
 
     // Miryoku QWERTY like default layer.
     default_layer {
-      #define BT_PGDN &lt _BOOT PG_DN
-      #define BT_PGUP &lt _BOOT PG_UP
+      #define BT_PGDN    &lt _BOOT PG_DN
+      #define BT_PGUP    &lt _BOOT PG_UP
       display-name = " Default";
       bindings = <
-        &kp ESC   &kp Q      &kp W      BRC_E      &kp R      &kp T                                                  &kp Y      &kp U      BRC_I      &kp O      &kp P      &kp BSPC
-        LCTL_TAB  _A         _S         _D         _F         _G                                                      _H         _J         _K         _L         _QUOT      _SEMI
-        &kp LSHFT &kp Z      &kp X      MOS_C      &kp V      &kp B      &kp ESC     BOOT              BOOT  _M_MUTE &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp RSHFT
-                                        &trans     &trans     MED_ESC    NAV_SPC     SFT_TAB           SYM_ENT NUM_BS  FUN_DEL   BT_PGDN   BT_PGUP
+        &kp ESC    &kp Q      &kp W      BRC_E      &kp R      &kp T                                                   &kp Y      &kp U      BRC_I      &kp O      &kp P      &kp BSPC
+        LCTL_TAB   _A         _S         _D         _F         _G                                                       _H         _J         _K         _L         _QUOT      _SEMI
+        &kp LSHFT  &kp Z      &kp X      MOS_C      &kp V      &kp B      &kp ESC     BOOT              BOOT  _M_MUTE  &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp RSHFT
+                                         &trans     &trans     MED_ESC    NAV_SPC     SFT_TAB           SYM_ENT NUM_BS FUN_DEL    BT_PGDN    BT_PGUP
       >;
       
       sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
@@ -244,9 +244,9 @@
     nav_layer {
       display-name = "    Nav";
       bindings = <
-        &trans     &trans     &trans     &trans     &trans     &trans                                                &kp INS    &kp K_UNDO &trans      &trans     &trans     &trans
-        &trans     _LGUI      _LALT      _LSFT      _LCTL      &trans                                                &kp LEFT   &kp DOWN   &kp UP      &kp RIGHT  &trans     &trans
-        &trans     &trans     &to _LMS   &trans     &trans     &trans     &trans     &trans          &trans &trans  &kp HOME   &kp PG_DN  &kp PG_UP   &kp END    &trans     &trans
+        &trans     &trans     &trans     &trans     &trans     &trans                                                 &kp INS    &kp K_UNDO &trans     &trans     &trans     &trans
+        &trans     _LGUI      _LALT      _LSFT      _LCTL      &trans                                                 &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans     &trans
+        &trans     &trans     &to _LMS   &trans     &trans     &trans     &trans     &trans          &trans &trans   &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans     &trans
                                          &trans     &trans     &trans     &trans     &trans          &trans &kp BSPC &trans     &trans     &trans
       >;
     };
@@ -254,16 +254,16 @@
     // Layer 2
     // - Num layer
     // - Miryoku
-    #define CTL_DN &hmr_right LCTL DOWN
-    #define SFT_UP &hmr_right LSFT UP
-    #define ALT_R  &hmr_right LALT RIGHT
+    #define CTL_DN     &hmr_right LCTL DOWN
+    #define SFT_UP     &hmr_right LSFT UP
+    #define ALT_R      &hmr_right LALT RIGHT
     num_layer {
       display-name = "    Num";
       bindings = <
-        &trans     AS(LBKT)   AS(N7)     AS(N8)     AS(N9)     AS(RBKT)                                            &trans     &trans     &trans     &trans     &trans     &trans
-        &trans     AS(SEMI)   AS(N4)     AS(N5)     AS(N6)     AS(EQUAL)                                           &kp LEFT   CTL_DN     SFT_UP     ALT_R      &trans     &trans
-        &trans     AS(GRAVE)  AS(N1)     AS(N2)     AS(N3)     AS(BSLH)   &trans     &trans          &trans &trans &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans     &trans
-                                         &trans     &trans     &kp DOT    AS(N0)     AS(MINUS)       &trans &trans &trans     &trans     &trans
+        &trans     AS(LBKT)   AS(N7)     AS(N8)     AS(N9)     AS(RBKT)                                              &trans     &trans     &trans     &trans     &trans     &trans
+        &trans     AS(SEMI)   AS(N4)     AS(N5)     AS(N6)     AS(EQUAL)                                             &kp LEFT   CTL_DN     SFT_UP     ALT_R      &trans     &trans
+        &trans     AS(GRAVE)  AS(N1)     AS(N2)     AS(N3)     AS(BSLH)   &trans     &trans          &trans &trans   &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans     &trans
+                                         &trans     &trans     &kp DOT    AS(N0)     AS(MINUS)       &trans &trans   &trans     &trans     &trans
       >;
     };
 
@@ -273,10 +273,10 @@
     sym_layer {
       display-name = "    Sym";
       bindings = <
-        &trans     &kp LBRC   &kp AMPS   &kp STAR   &kp LPAR   &kp RBRC                                             &trans     &trans     &trans     &trans     &trans     &trans
-        &trans     &kp COLON  &kp DLLR   &kp PRCNT  &kp CARET  &kp PLUS                                             &trans     &trans     &trans     &trans     &trans     &trans
-        &trans     &kp TILDE  &kp EXCL   &kp AT     &kp HASH   &kp PIPE   &trans     &trans          &trans &trans  &trans     &trans     &trans     &trans     &trans     &trans
-                                         &trans     &trans     &kp LPAR   &kp RPAR   &kp UNDER       &trans &trans  &trans     &trans     &trans
+        &trans     &kp LBRC   &kp AMPS   &kp STAR   &kp LPAR   &kp RBRC                                              &trans     &trans     &trans     &trans     &trans     &trans
+        &trans     &kp COLON  &kp DLLR   &kp PRCNT  &kp CARET  &kp PLUS                                              &trans     &trans     &trans     &trans     &trans     &trans
+        &trans     &kp TILDE  &kp EXCL   &kp AT     &kp HASH   &kp PIPE   &trans     &trans          &trans &trans   &trans     &trans     &trans     &trans     &trans     &trans
+                                         &trans     &trans     &kp LPAR   &kp RPAR   &kp UNDER       &trans &trans   &trans     &trans     &trans
       >;
     };
 
@@ -286,10 +286,10 @@
     function_layer {
       display-name = " Func";
       bindings = <
-        &trans     &kp F12    &kp F7     &kp F8     &kp F9     &kp PSCRN                                            &trans     &trans     &trans     &trans     &trans     &trans
-        &trans     &kp F11    &kp F4     &kp F5     &kp F6     &kp SLCK                                             &trans     &trans     &trans     &trans     &trans     &trans
-        &trans     &kp F10    &kp F1     &kp F2     &kp F3     _PAUSE     &trans     &trans          &trans &trans  &trans     &trans     &trans     &trans     &trans     &trans
-                                         &trans     &kp F15    &kp F14    &kp F13    &trans          &trans &trans  &trans     &trans     &trans
+        &trans     &kp F12    &kp F7     &kp F8     &kp F9     &kp PSCRN                                             &trans     &trans     &trans     &trans     &trans     &trans
+        &trans     &kp F11    &kp F4     &kp F5     &kp F6     &kp SLCK                                              &trans     &trans     &trans     &trans     &trans     &trans
+        &trans     &kp F10    &kp F1     &kp F2     &kp F3     _PAUSE     &trans     &trans          &trans &trans   &trans     &trans     &trans     &trans     &trans     &trans
+                                         &trans     &kp F15    &kp F14    &kp F13    &trans          &trans &trans   &trans     &trans     &trans
       >;
     };
 
@@ -299,10 +299,10 @@
     mouse_layer {
       display-name = " Mouse";
       bindings = <
-        &trans     &trans     &trans     &trans     &trans     &trans                                               &trans     &trans     &trans     &trans     &trans     &trans
-        &trans     &trans     &trans     &trans     &trans     &trans                                               _MSL       _MSD       _MSU       _MSR       &trans     &trans
-        &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans          &trans &trans  _MWL       _MWD       _MWU       _MWR       &trans     &trans
-                                         &trans     &trans     &trans     &trans     &trans          _MBR   _MBL    _MBM       &trans     &trans
+        &trans     &trans     &trans     &trans     &trans     &trans                                                &trans     &trans     &trans     &trans     &trans     &trans
+        &trans     &trans     &trans     &trans     &trans     &trans                                                _MSL       _MSD       _MSU       _MSR       &trans     &trans
+        &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans          &trans &trans   _MWL       _MWD       _MWU       _MWR       &trans     &trans
+                                         &trans     &trans     &trans     &trans     &trans          _MBR   _MBL     _MBM       &trans     &trans
       >;
     };
 
@@ -314,20 +314,20 @@
     media_layer {
       display-name = " Media";
       bindings = <
-        &trans     RGBEFF     RGBHUD     RGBSAD     RGBBRD     &trans                                               &trans     &trans     &trans     &trans     &trans     &trans
-        &trans     _BT_CLR    _BT_CLRA   &trans     &trans     &trans                                               &trans     _VOL_DN    _VOL_UP    &trans     &trans     &trans
-        &trans     BT0        BT1        BT2        BT3        BT4        &trans     &trans          &trans &trans  &trans     &trans     &trans     &trans     &trans     &trans
-                                         &trans     &trans     &trans     &trans     &trans          _M_STOP _M_PP  _M_MUTE    &trans     &trans
+        &trans     RGBEFF     RGBHUD     RGBSAD     RGBBRD     &trans                                                &trans     &trans     &trans     &trans     &trans     &trans
+        &trans     _BT_CLR    _BT_CLRA   &trans     &trans     &trans                                                &trans     _VOL_DN    _VOL_UP    &trans     &trans     &trans
+        &trans     BT0        BT1        BT2        BT3        BT4        &trans     &trans          &trans &trans   &trans     &trans     &trans     &trans     &trans     &trans
+                                         &trans     &trans     &trans     &trans     &trans          _M_STOP _M_PP   _M_MUTE    &trans     &trans
       >;
     };
 
     lmouse {
       display-name = " Lmouse";
       bindings = <
-        &to 0      &to 0      &to 0      &to 0      &to 0      &to 0                                                &to 0      &to 0      &to 0      &to 0      &to 0      &to 0
-        &to 0      &to 0      _MSL       _MSU       _MSD       _MSR                                                 &to 0      &to 0      &to 0      &to 0      &to 0      &to 0
-        &to 0      &to 0      &to 0      _MWU       _MWD       &to 0      &to 0      &to 0           &to 0  &to 0  &to 0      &to 0      &to 0      &to 0      &to 0      &to 0
-                                         &to 0      &to 0      _MBL       &to 0      &to 0           &to 0  &to 0  &to 0      &to 0      &to 0
+        &to 0      &to 0      &to 0      &to 0      &to 0      &to 0                                                 &to 0      &to 0      &to 0      &to 0      &to 0      &to 0
+        &to 0      &to 0      _MSL       _MSU       _MSD       _MSR                                                  &to 0      &to 0      &to 0      &to 0      &to 0      &to 0
+        &to 0      &to 0      &to 0      _MWU       _MWD       &to 0      &to 0      &to 0           &to 0  &to 0   &to 0      &to 0      &to 0      &to 0      &to 0      &to 0
+                                         &to 0      &to 0      _MBL       &to 0      &to 0           &to 0  &to 0   &to 0      &to 0      &to 0
       >;
     };
 
@@ -337,10 +337,10 @@
     braces_layer {
       display-name = " Braces";
       bindings = <
-        &trans     &trans     &trans     &kp LBKT   &kp RBKT   &trans                                               &trans     &trans     &trans     &trans     &trans     &trans
-        &trans     &trans     &trans     &kp LPAR   &kp RPAR   &trans                                               &trans     &trans     &trans     &trans     &trans     &trans
-        &trans     &trans     &trans     &kp LBRC   &kp RBRC   &trans     &trans     &trans          &trans &trans  &trans     &trans     &trans     &trans     &trans     &trans
-                                         &trans     &trans     &trans     &trans     &trans          &trans &trans  &trans     &trans     &trans
+        &trans     &trans     &trans     &kp LBKT   &kp RBKT   &trans                                                &trans     &trans     &trans     &trans     &trans     &trans
+        &trans     &trans     &trans     &kp LPAR   &kp RPAR   &trans                                                &trans     &trans     &trans     &trans     &trans     &trans
+        &trans     &trans     &trans     &kp LBRC   &kp RBRC   &trans     &trans     &trans          &trans &trans   &trans     &trans     &trans     &trans     &trans     &trans
+                                         &trans     &trans     &trans     &trans     &trans          &trans &trans   &trans     &trans     &trans
       >;
     };
 
@@ -350,10 +350,10 @@
     braces_right_layer {
       display-name = "BracesR";
       bindings = <
-        &trans     &trans     &trans     &trans     &trans     &trans                                               &trans     &kp LBKT   &kp RBKT   &trans     &trans     &trans
-        &trans     &trans     &trans     &trans     &trans     &trans                                               &trans     &kp LPAR   &kp RPAR   &trans     &trans     &trans
-        &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans          &trans &trans  &trans     &kp LBRC   &kp RBRC   &trans     &trans     &trans
-                                         &trans     &trans     &trans     &trans     &trans          &trans &trans  &trans     &trans     &trans
+        &trans     &trans     &trans     &trans     &trans     &trans                                                &trans     &kp LBKT   &kp RBKT   &trans     &trans     &trans
+        &trans     &trans     &trans     &trans     &trans     &trans                                                &trans     &kp LPAR   &kp RPAR   &trans     &trans     &trans
+        &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans          &trans &trans   &trans     &kp LBRC   &kp RBRC   &trans     &trans     &trans
+                                         &trans     &trans     &trans     &trans     &trans          &trans &trans   &trans     &trans     &trans
       >;
     };
 
@@ -363,10 +363,10 @@
     boot_layer {
       display-name = " Boot";
       bindings = <
-        &trans     BOOT       &trans     &trans     &trans     &trans                                               &trans     &trans     &trans     &trans     BOOT       &trans
-        &trans     &trans     &trans     &trans     &trans     &trans                                               &trans     &trans     &trans     &trans     &trans     &trans
-        &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans          &trans &trans  &trans     &trans     &trans     &trans     &trans     &trans
-                                         &trans     &trans     &trans     &trans     &trans          &trans &trans  &trans     &trans     &trans
+        &trans     BOOT       &trans     &trans     &trans     &trans                                                &trans     &trans     &trans     &trans     BOOT       &trans
+        &trans     &trans     &trans     &trans     &trans     &trans                                                &trans     &trans     &trans     &trans     &trans     &trans
+        &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans          &trans &trans   &trans     &trans     &trans     &trans     &trans     &trans
+                                         &trans     &trans     &trans     &trans     &trans          &trans &trans   &trans     &trans     &trans
       >;
     };
   };
